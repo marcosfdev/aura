@@ -23,5 +23,9 @@
 		"cssnano": "^5.0.8",
 		"tailwindcss": "^2.2.16"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@mailchimp/mailchimp_transactional": "^1.0.46",
+		"axios": "^0.23.0"
+	}
 }
