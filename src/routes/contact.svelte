@@ -3,9 +3,12 @@
 	import { quintOut } from 'svelte/easing';
 	import axios from 'axios';
 
-	let formData = {};
-	let errors = {};
-	let loading = false;
+	// creating vars
+	let formData = {},
+		errors = {},
+		loading = false;
+
+	//checking if email machtes email regex while typing
 	function emailValidation(node, email) {
 		const re =
 			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -21,6 +24,7 @@
 			}
 		};
 	}
+	//checking if phonenumber machtes phone regex while typing
 	function phoneValidation(node, phone) {
 		const re = /^\+1([0-9]+)$/;
 		return {
@@ -34,7 +38,7 @@
 			}
 		};
 	}
-
+	// submiting the data from the form and checking if every field is not null
 	function submit() {
 		loading = true;
 		if (!formData.email) {
